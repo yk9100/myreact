@@ -1,0 +1,33 @@
+#category header {
+    box-sizing: border-box;
+    width:100%;
+    padding:0 10px;
+    height:44px;
+    position: relative;
+    img{
+        position: absolute;
+        left:7%;
+        top:50%;
+        width:20px;
+        height:20px;
+        margin-top: -10px;
+    }
+    input{
+        width:70%;
+        border-radius: 15px;
+        border:0;
+        height:27px;
+        background-color: #F5F5F5;
+        display: inline-block;
+        vertical-align: middle;
+        padding-left:20px;
+        margin-left:10px;
+        text-indent: 5%;
+    }
+    span{
+        width:0;
+        height:100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
