@@ -6,7 +6,7 @@ import Category from '../view/Category';
 import Cart from '../view/Cart';
 import Message from '../view/Message';
 import Center from '../view/Center';
-
+import zscDetail from '../view/Cart/Detail'
 const routes = (
     <Router>
         <App>
@@ -16,7 +16,7 @@ const routes = (
                 <Route path="/cart" component={Cart}/>
                 <Route path="/message" component={Message}/>
                 <Route path="/center" component={Center}/>
-            
+                <Route path="/zscDetail/:id" component={zscDetail}></Route>
                 <Redirect from="/" to="/home"/>
             </Switch>
         </App>
