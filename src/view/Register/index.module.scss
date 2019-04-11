@@ -15,22 +15,71 @@ a{
     text-decoration: none;
 }
 
+body{
+    background-color: #F5F5F5;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 header {
     position: relative;
     background: #fff;
-    height: 0.88rem;
-    text-align: center;
-    line-height: 0.88rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -o-box-sizing: border-box;
     -ms-box-sizing: border-box;
-    padding: 0rem 0.2rem 0rem 0.2rem;
     border-bottom: 1px solid #f5f5f5;
 
     h3{
-        display: inline-block;
-        font-size: 0.34rem;
+        width: 70%;
+        margin: 0 auto;
+        font-size: 0.18rem;
+        text-align: center;
+    }
+
+    a.header_login_btn{
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 0 20px;
+        height: 100%;
+        font-size: .16rem;
+    }
+}
+
+.formbox{
+    padding: 0 4%;
+
+    .formInner{
+        margin: 5% 0;
+        padding: 0 5%;
+        background: #fff;
+
+        input{
+            display: block;
+            width: 100%;
+            line-height: .55rem;
+            border:none;
+            outline: none;
+        }
+
+        input[type=text]{
+            border-bottom:1px solid #EAEAEA;
+        }
+    }
+
+    input[type=button]{
+        display: block;
+        margin-top: 65px;
+        width: 100%;
+        font-size: .16rem;
+        line-height: .45rem;
+        border:none;
+        outline: none;
+        background: #FFD444;
     }
 }

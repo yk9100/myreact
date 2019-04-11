@@ -13,6 +13,10 @@
         height:44px;
         line-height: 44px;
 
+        a{
+            font-size: .12rem;
+            color: #808080;
+        }
     }
 }
 :global(.active){
