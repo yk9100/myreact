@@ -1,5 +1,6 @@
 const proxy = require('http-proxy-middleware');
 
+
 module.exports = (app) => {
     app.use('/pages', proxy({
         target: "https://m.wowdsgn.com",
@@ -18,5 +19,12 @@ module.exports = (app) => {
     app.use('/message', proxy({
         target: "https://m.wowdsgn.com",
         changeOrigin: true
-    }));
+	}));
+	
+	app.use('/v2',
+		proxy({
+			target: 'https://m.wowdsgn.com',
+			changeOrigin: true
+		})
+	)
 }

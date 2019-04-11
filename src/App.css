@@ -1,7 +1,13 @@
 *{
-  margin:0;
-  padding:0;
-  font-size: .14rem;
+	margin:0;
+	padding:0;
+	font-size: .14rem;
+}
+
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 a{
