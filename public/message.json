@@ -1,0 +1,27 @@
+{
+    "success": true,
+    "errorCode": null,
+    "errorMsg": null,
+    "data": [{
+        "messageId": 189,
+        "msgType": 2,
+        "msgTitle": "空间",
+        "unReadCount": 0,
+        "msgContent": "影响阿信最深的人，90年代起在台湾海边造“最摇滚的盒子”，陈奕迅都慕名而去",
+        "openType": 2,
+        "targetType": "202",
+        "targetId": "1218",
+        "isRead": true,
+        "createTime": "2019-03-29 15:39:34"
+    }, {
+        "messageId": 152736,
+        "msgType": 1,
+        "msgTitle": "优惠信息",
+        "unReadCount": 1,
+        "msgContent": "欢迎加入尖叫设计，我们已将9张优惠券送入您的账户中，请查收",
+        "openType": 2,
+        "targetType": "208",
+        "isRead": false,
+        "createTime": "2019-04-09 17:01:24"
+    }]
+}
