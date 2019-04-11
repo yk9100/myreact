@@ -1,8 +1,12 @@
-import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom';
+import React, {
+    Component
+} from 'react';
+import {
+    NavLink
+} from 'react-router-dom';
 import style from './index.module.scss';
 class Tabbar extends Component {
-    render () {
+    render() {
         return <div id={style.tabbar}>
         <ul>
             <li><NavLink to="/home" activeClassName="active">首页</NavLink></li>
