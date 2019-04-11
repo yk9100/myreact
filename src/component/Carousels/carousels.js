@@ -35,6 +35,10 @@ class Carousels extends Component {
 		)
 	}
 
+	componentDidMount () {
+		console.log('轮播数据',this.props.mylist);
+	}
+
 
 }
 
