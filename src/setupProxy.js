@@ -1,5 +1,6 @@
 const proxy = require('http-proxy-middleware');
 
+
 module.exports = (app) =>{
 	app.use('/recommend',
 			proxy({
@@ -12,5 +13,12 @@ module.exports = (app) =>{
 				target:'https://m.wowdsgn.com',
 				changeOrigin:true
 			})
-		)
+		),
+	app.use('/v2',
+			proxy({
+				target: 'https://m.wowdsgn.com',
+				changeOrigin: true
+			})
+	)
+
 }

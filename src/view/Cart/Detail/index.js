@@ -90,11 +90,13 @@ class ZscDetail extends Component {
 		axios({
 			url:`/itemdetail/spec/toBuyNow/${this.props.match.params.id}?_=1554948819170`
 		}).then(res=>{
-			this.setState({
-				colorList:res.data.data.itemAttrVoList
-			},()=>{
-				console.log(res.data.data.itemAttrVoList)
-			})
+			if (res.data.data) {				
+				this.setState({
+					colorList:res.data.data.itemAttrVoList
+				},()=>{
+					console.log(res.data.data.itemAttrVoList)
+				})
+			}
 		})
 	}
 	
@@ -160,6 +162,7 @@ class ZscDetail extends Component {
 						<ul key={item.attributeId}>
 						<li>{item.attributeName}</li>
 						{	
+							
 							item.itemAttrValueVoList.map((item2,index)=>
 									<li key={item2.attributeValueId}>
 										<span onClick={this.changeColor.bind(this,index)} className={index===this.state.colorIndex?'changeColor':''}>
@@ -167,6 +170,7 @@ class ZscDetail extends Component {
 										</span>
 									</li>
 								)
+								
 						}
 					</ul>
 					)

@@ -1,3 +1,4 @@
+
 import {createStore} from 'redux'
 
 var reducer = (prevState=true,action) => {
@@ -18,3 +19,4 @@ var reducer = (prevState=true,action) => {
 const store = createStore(reducer)
 
 export default store
+
