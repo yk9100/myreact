@@ -16,6 +16,7 @@ import Activity from '../view/Home/Activity/activity';
 import Furniture from '../view/Home/Furniture/furniture';
 import Jiaju from '../view/Home/Jiaju/jiaju';
 import Recommend from '../view/Home/Recommend/recommend';
+import Register from '../view/Register';
 
 const routes = (
     <Router>
@@ -35,7 +36,8 @@ const routes = (
                 <Route path="/cart" component={Cart}/>
                 <Route path="/message" component={Message}/>
                 <Route path="/center" component={Center}/>
-            
+                <Route path="/register" component={Register}/>
+
                 <Redirect from="/" to="/home"/>
             </Switch>
         </App>

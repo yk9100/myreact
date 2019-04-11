@@ -1,12 +1,13 @@
 /**
  * Created by Administrator on 2017/9/13.
  */
-(function (doc, win) {
+(function(doc, win) {
     var docEl = doc.documentElement,
         resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-        recalc = function () {
+        recalc = function() {
             var clientWidth = docEl.clientWidth;
             if (!clientWidth) return;
+
             // if(clientWidth>=640){
             //     docEl.style.fontSize = '100px';
             // }else{
