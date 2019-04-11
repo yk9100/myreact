@@ -42,7 +42,7 @@ class Recommend extends Component {
 				}, () => {
 					console.log('1', this.state.datalist);
 					var swiper1 = new Swiper('.swiper1', {
-						autoplay: true,
+						//autoplay: true,
 						loop: true,
 						pagination: {
 							el: '.swp1',
