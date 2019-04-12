@@ -1,0 +1,106 @@
+{
+    "success": true,
+    "errorCode": null,
+    "errorMsg": null,
+    "data": [{
+        "messageId": 189,
+        "msgTitle": "空间",
+        "unReadCount": 0,
+        "msgContent": "影响阿信最深的人，90年代起在台湾海边造“最摇滚的盒子”，陈奕迅都慕名而去",
+        "openType": 2,
+        "targetType": "202",
+        "targetId": "1218",
+        "isRead": true,
+        "createTime": "2019-03-29 15:39:34"
+    }, {
+        "messageId": 188,
+        "msgTitle": "生活",
+        "unReadCount": 0,
+        "msgContent": "睡不着的时候，想想别人的床头是怎么设计的",
+        "openType": 2,
+        "targetType": "202",
+        "targetId": "1216",
+        "isRead": true,
+        "createTime": "2019-03-27 16:57:14"
+    }, {
+        "messageId": 187,
+        "msgTitle": "设计",
+        "unReadCount": 0,
+        "msgContent": "处处讲究人体工学的设计界，凭什么他们能做出畅销50多国的椅子？",
+        "openType": 2,
+        "targetType": "202",
+        "targetId": "1211",
+        "isRead": true,
+        "createTime": "2019-03-22 12:13:11"
+    }, {
+        "messageId": 186,
+        "msgTitle": "空间",
+        "unReadCount": 0,
+        "msgContent": "中国情侣在纪念碑谷安家，推开窗就是地中海！十万网友惊呼：神仙般的日子啊",
+        "openType": 2,
+        "targetType": "202",
+        "targetId": "1205",
+        "isRead": true,
+        "createTime": "2019-03-21 15:38:39"
+    }, {
+        "messageId": 185,
+        "msgTitle": "生活",
+        "unReadCount": 0,
+        "msgContent": "北欧风早就Out了？永不过时的复古风了解一下",
+        "openType": 2,
+        "targetType": "202",
+        "targetId": "1204",
+        "isRead": true,
+        "createTime": "2019-03-19 13:27:07"
+    }, {
+        "messageId": 184,
+        "msgTitle": "生活",
+        "unReadCount": 0,
+        "msgContent": "你家为什么这么丑？划重点：家居配色、家居配色、家居配色",
+        "openType": 2,
+        "targetType": "202",
+        "targetId": "1199",
+        "isRead": true,
+        "createTime": "2019-03-15 15:29:08"
+    }, {
+        "messageId": 183,
+        "msgTitle": "设计",
+        "unReadCount": 0,
+        "msgContent": "你们用一天逛完北欧设计，而研究北欧设计的我们驻足了5年",
+        "openType": 2,
+        "targetType": "202",
+        "targetId": "1201",
+        "isRead": true,
+        "createTime": "2019-03-13 16:00:29"
+    }, {
+        "messageId": 182,
+        "msgTitle": "空间",
+        "unReadCount": 0,
+        "msgContent": "她家83m²比200m²还宽敞！大学教师上阵设计，全屋真正老家具，就像住进时光博物馆",
+        "openType": 2,
+        "targetType": "202",
+        "targetId": "1193",
+        "isRead": true,
+        "createTime": "2019-03-11 19:04:11"
+    }, {
+        "messageId": 181,
+        "msgTitle": "空间",
+        "unReadCount": 0,
+        "msgContent": "温柔的力度：挥洒别样的创意，她们，让世界更美好了",
+        "openType": 2,
+        "targetType": "202",
+        "targetId": "1187",
+        "isRead": true,
+        "createTime": "2019-03-08 17:46:37"
+    }, {
+        "messageId": 180,
+        "msgTitle": "空间",
+        "unReadCount": 0,
+        "msgContent": "20万爆改魔都老装修！时尚从业者告诉你：用家就能制霸朋友圈",
+        "openType": 2,
+        "targetType": "202",
+        "targetId": "1186",
+        "isRead": true,
+        "createTime": "2019-03-07 13:39:03"
+    }]
+}

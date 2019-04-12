@@ -65,13 +65,16 @@ body{
 		}
 	}
 	.footer{
+		z-index:1234;
+		position: fixed;
+		left: 0;
+		bottom: -1px;
+		width:100%;
 		ul{
 			width:100%;
 			height:45px;
 			background: pink;
-			position: fixed;
-			left: 0;
-			bottom: -1px;
+			
 			display: flex;
 			line-height: 45px;
 			text-align: center;

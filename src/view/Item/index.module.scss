@@ -1,0 +1,125 @@
+#item header{
+    width:100%;
+    padding:0 .1rem;
+    display: flex;
+    height:.44rem;
+    justify-content: space-between;
+
+    img {
+        width: .26rem;
+        height: .26rem;
+        align-self: center;
+    }
+
+    span {
+        width: 80%;
+        height: 100%;
+        line-height: .44rem;
+        font-weight: bold;
+        font-size: .17rem;
+           text-align: center;
+
+    }
+}
+
+#item section{
+    width:100%;
+    background: #fff;
+    padding:.3rem .15rem;
+    padding-bottom:.2rem;
+    p{
+        width: 90%;
+        margin:auto;
+        font-size:.18rem;
+        color:#000;
+        margin-bottom:.1rem;
+    }
+    span{
+        display: block;
+         width: 90%;
+         margin:auto;
+         font-size:.2rem;
+         color:#000;
+         font-weight:bold;
+    }
+}
+#item h1{
+        font-size: 16px;
+        color: #000000;
+        letter-spacing: 0;
+        text-align: center;
+        font-weight: normal;
+}
+
+#item main {
+    background: #fff;
+
+    ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            width: 50%;
+            height: 2.8rem;
+            border-right: 1px solid #f5f5f5;
+            border-bottom: 1px solid #f5f5f5;
+
+            img {
+                width: 1.87rem;
+                height: 1.875rem;
+            }
+
+            p {
+                margin: auto;
+                margin-top: .25rem;
+                width: 88%;
+                color: #808080;
+                font-size: 0.13rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+
+            }
+
+            span {
+                font-size: 0.13rem;
+                color: #000;
+                margin-left: .1rem;
+            }
+        }
+
+        li:nth-child(2n) {
+            border-right: 0;
+        }
+    }
+}
+
+#item footer{
+    ul{
+        height:.44rem;
+        width:100%;
+        display: flex;
+        background: white;
+        position: fixed;
+        bottom:0;
+        left:0;
+        z-index: 1000;
+        li{
+            width:33.33%;
+            height:100%;
+            line-height:.44rem;
+            text-align: center;
+        }
+    }
+}
+
+#item aside{
+    position:fixed;
+    right:.2rem;
+    bottom: .8rem;
+    img{
+        width:.35rem;
+        height:.35rem;
+    }
+}

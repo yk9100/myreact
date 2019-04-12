@@ -5,6 +5,8 @@ import { Carousel, WingBlank } from 'antd-mobile';
 import { Accordion, List } from 'antd-mobile';
 import axios from 'axios'
 import { Drawer, NavBar, Icon } from 'antd-mobile';
+import {connect} from 'react-redux';
+import {showTabbar, hideTabbar} from '../../../store/actionCreators.js';
 
 let count = 0;
 class ZscDetail extends Component {
@@ -44,10 +46,11 @@ class ZscDetail extends Component {
 		})
 	}
 	componentDidMount() {
-		store.dispatch({
-			type:'hide_tabbar',
-			isShow:false
-		})
+		// store.dispatch({
+		// 	type:'hide_tabbar',
+		// 	isShow:false
+		// })
+		this.props.hideTabbar();
 
 		axios({
 			url:`/recommend/item?skuId=${this.props.match.params.id}&_=1554877427243`
@@ -103,11 +106,11 @@ class ZscDetail extends Component {
 	}
 	
 	componentWillUnmount() {
-		store.dispatch({
-			type:'show_tabbar',
-			isShow:true
-		})
-
+		// store.dispatch({
+		// 	type:'show_tabbar',
+		// 	isShow:true
+		// })
+		this.props.showTabbar();
 		count = 0;
 	}
 
@@ -655,5 +658,9 @@ class ZscDetail extends Component {
 
 
 }
+let mapDistpatchToProps = {
+	showTabbar,
+	hideTabbar
+}
 
-export default ZscDetail
+export default connect(null,mapDistpatchToProps)(ZscDetail)

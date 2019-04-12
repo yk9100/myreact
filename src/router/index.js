@@ -19,14 +19,24 @@ import Jiaju from '../view/Home/Jiaju/jiaju';
 import Recommend from '../view/Home/Recommend/recommend';
 import Register from '../view/Register';
 import Login from '../view/Login';
+
 import zscOrder from '../view/Cart/Order/order.js';
 import zscCollection from '../view/Cart/Collection/collection.js'
 import zscUser from '../view/Cart/User/user.js';
+
+import {Provider} from 'react-redux';
+import store from '../store/store';
+import Page from '../view/Page';
+import Item from '../view/Item';
+import List from '../view/Message/List';
+
+
 function isLogin () {
-    return false;
+    return true;
 }
 
 const routes = (
+    <Provider store={store}>
     <Router>
         <App>
             <Switch>
@@ -42,11 +52,11 @@ const routes = (
                 <Route path="/searcher" component={Searcher}></Route>
                 <Route path="/category" component={Category}/>
 
-                <Route path="/cart" component={Cart}/>
-                <Route path="/message" component={Message}/>
-                <Route path="/center" component={Center}/>
+                
                 <Route path="/zscDetail/:id" component={zscDetail}></Route>
-
+                <Route path="/page/:myid" component={Page}/>
+                <Route path="/item" component={Item}/>
+                <Route path="/list" component={List}/>
                 <Route path="/cart" component={()=>isLogin()?<Cart />:<Redirect to="/login" />}/>
                 <Route path="/message" component={()=>isLogin()?<Message />:<Redirect to="/login" />}/>
                 <Route path="/center" component={()=>isLogin()?<Center />:<Redirect to="/login" />}/>
@@ -60,6 +70,7 @@ const routes = (
             </Switch>
         </App>
     </Router>
+    </Provider>
 );
 
 export default routes;

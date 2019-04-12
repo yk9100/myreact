@@ -4,6 +4,9 @@ import axios from 'axios'
 import store from '../../../store'
 import { Toast, WhiteSpace, WingBlank, Button } from 'antd-mobile';
 import { Modal } from 'antd-mobile';
+import {connect} from 'react-redux';
+import {showTabbar, hideTabbar} from '../../../store/actionCreators.js';
+
 
 const alert = Modal.alert;
 
@@ -28,10 +31,8 @@ class Order extends Component {
 
 	componentDidMount() {
 		
-		store.dispatch({
-			type:'hide_tabbar',
-			isShow:false
-		})
+		this.props.hideTabbar(); 
+
 
 		axios({
 			url:`/order/settleBuynow?productId=${this.props.match.params.id}&productQty=1&_=1554985155765`
@@ -42,6 +43,10 @@ class Order extends Component {
 		Toast.loading('Loading...', 1, () => {
       		console.log('Load complete !!!');
     	});
+	}
+
+	componentWiiUnmount () {
+		this.props.showTabbar();
 	}
 
 	render () {
@@ -117,4 +122,9 @@ class Order extends Component {
 	}
 }
 
-export default Order
+let mapDistpatchToProps = {
+	showTabbar,
+	hideTabbar
+}
+
+export default connect(null,mapDistpatchToProps)(Order)

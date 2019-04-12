@@ -8,12 +8,12 @@ import 'antd-mobile/dist/antd-mobile.css';
 var count = 1;
 class Cart extends Component {
 	fuck() {
-		this.props.history.push('/home')
+		window.location.href = '#/home';
 	}
 	
 	
 	enterDetail(id) {
-		this.props.history.push(`/zscDetail/${id}`)
+		window.location.href= `#/zscDetail/${id}`
 	}
 
 
