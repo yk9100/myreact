@@ -14,15 +14,36 @@ class ItemRecommend extends Component {
 	render() {
 		return (
 			<div id={style.items}>
-				itemRecommend
 				<ul>
 					{
-			// this.props ?
-			// this.props.mydatalistItem.map((items, index)=>
-			// 	<li>{items}</li>
-
-			// )
-			// :null
+						this.props ?
+						this.props.mydatalistItem.map((items)=>
+							<li key={items.moduleId} 
+								style={{
+									background: 'white',
+									textAlign: 'center',
+									overflow: 'hidden',
+									margin: '.15rem 0',
+									boxSizing: 'border-box',
+								}}>
+								<h1 style={{
+									textAlign:'center',
+									fontSize: '.18rem'
+								}}>{items.moduleName}</h1>
+								<h3 style={{
+									textAlign:'center',
+									fontSize: '.12rem',
+									color: '#808080',
+									marginBottom: '.05rem',
+								}}>{items.moduleDescription}</h3>
+								<img src={items.moduleContent.banners[0].bannerImgSrc} 
+									style={{
+										width: '3.45rem',
+										margin: 'auto',
+									}}/>
+							</li>
+						)
+						:null
 					}
 				</ul>
 			</div>
@@ -30,7 +51,7 @@ class ItemRecommend extends Component {
 	}
 
 	componentDidMount() {
-		console.log(this.props)
+		console.log('ddddd', this.props.mydatalistItem)
 	}
 }
 
