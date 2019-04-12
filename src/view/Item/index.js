@@ -29,19 +29,19 @@ class Item extends Component {
             <div className="swiper-container" style={{ background:"white" }}>
                 <div className="swiper-wrapper">
                     <div className="swiper-slide" style={{ margin: 0 }}>
-                        <img src="https://img.wowdsgn.com/product/images/2923e731-01f2-4de3-9f8f-e5b56762db59_2dimension_800x800.jpg?imageView2/1/w/375/h/300" />
+                        <img src="https://img.wowdsgn.com/product/images/2923e731-01f2-4de3-9f8f-e5b56762db59_2dimension_800x800.jpg?imageView2/1/w/375/h/300"  style={{width:"100%"}}/>
                     </div>
                     <div className="swiper-slide" style={{margin:0}}>
-                        <img src="https://img.wowdsgn.com/product/addtionalImage//e0af06fc-b8d8-4eee-b73f-26467999ecb4_2dimension_750x600.jpg?imageView2/1/w/375/h/300"/>
+                        <img src="https://img.wowdsgn.com/product/addtionalImage//e0af06fc-b8d8-4eee-b73f-26467999ecb4_2dimension_750x600.jpg?imageView2/1/w/375/h/300" style={{width:"100%"}}/>
                     </div>
                     <div className="swiper-slide" style={{ margin: 0 }}>
-                        <img src="https://img.wowdsgn.com/product/addtionalImage//b3e88985-c88a-4466-8d15-a12b8987578a_2dimension_750x600.jpg?imageView2/1/w/375/h/300" />
+                        <img src="https://img.wowdsgn.com/product/addtionalImage//b3e88985-c88a-4466-8d15-a12b8987578a_2dimension_750x600.jpg?imageView2/1/w/375/h/300" style={{width:"100%"}} />
                     </div>
                     <div className="swiper-slide" style={{ margin: 0 }}>
-                        <img src="https://img.wowdsgn.com/product/addtionalImage//b2dd3efa-8fd5-4387-9732-854a25b28ae0_2dimension_750x600.jpg?imageView2/1/w/375/h/300" />
+                        <img src="https://img.wowdsgn.com/product/addtionalImage//b2dd3efa-8fd5-4387-9732-854a25b28ae0_2dimension_750x600.jpg?imageView2/1/w/375/h/300"  style={{width:"100%"}}/>
                     </div>
                     <div className="swiper-slide" style={{ margin: 0 }}>
-                        <img src="https://img.wowdsgn.com/product/addtionalImage//c470c11a-123e-4919-860c-af8c8e43d251_2dimension_750x600.jpg?imageView2/1/w/375/h/300" />
+                        <img src="https://img.wowdsgn.com/product/addtionalImage//c470c11a-123e-4919-860c-af8c8e43d251_2dimension_750x600.jpg?imageView2/1/w/375/h/300"  style={{width:"100%"}}/>
                     </div>
                 </div>
                 <div className="swiper-pagination swiper-pagination-bullets"><span className="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span className="swiper-pagination-bullet"></span><span className="swiper-pagination-bullet"></span><span className="swiper-pagination-bullet"></span><span className="swiper-pagination-bullet"></span><span className="swiper-pagination-bullet"></span><span className="swiper-pagination-bullet"></span><span className="swiper-pagination-bullet"></span><span className="swiper-pagination-bullet"></span><span className="swiper-pagination-bullet"></span></div>

@@ -8,9 +8,6 @@ class Carousels extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			datalist: [],
-		}
 	}
 	render() {
 		return (
@@ -21,7 +18,7 @@ class Carousels extends Component {
 			        	this.props?
 			        	this.props.mylist.map((item)=>
 			        		<div className="swiper-slide" key={item.id}>
-			        			<img src={item.bannerImgSrc} style={{height:"2.5rem", width:"100%"}}/>
+			        			<img src={item.bannerImgSrc} alt="banners" style={{height:"2.5rem", width:"100%"}}/>
 			        		</div>)
 			        	:null
 			        }
@@ -36,7 +33,7 @@ class Carousels extends Component {
 	}
 
 	componentDidMount () {
-		console.log('轮播数据',this.props.mylist);
+		//console.log('轮播数据',this.props.mylist);
 	}
 
 

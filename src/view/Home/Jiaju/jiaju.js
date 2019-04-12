@@ -1,58 +1,109 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { PullToRefresh, Button } from 'antd-mobile';
 import Carousels from '../../../component/Carousels/carousels';
 import Swiper from 'swiper/dist/js/swiper.js';
 import 'swiper/dist/css/swiper.min.css';
 import style from './jiaju.module.scss'
 
+// products modules
+import Landscape from '../../../component/Landscape/index.js'
+import Pagemodule from '../../../component/Pagemodule/index.js'
+
+var pages = 1
 class Jiaju extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			datalist: [],
+			timeNow: null,
+			datalist: null,
+			page2:null,
 			banners: null,
+			// 下拉刷新状态
+			refreshing: false,
+			down: true,
+			height: document.documentElement.clientHeight,
 		}
 	}
 	render() {
 		return (
 			<div>
-				{
-					this.state.banners?
-					<Carousels mylist={this.state.banners}></Carousels>
-					:null
-				}
+				<PullToRefresh 
+					damping={60} 
+					ref={el => this.ptr = el} 
+					style={{ height: this.state.height,overflow: 'auto',}}
+					indicator={this.state.down ? {} : { deactivate: '上拉可以刷新' }}
+					direction="up"
+					refreshing={this.state.refreshing}
+					onRefresh={() => {
+						this.setState({ 
+							refreshing: true
+						});
 
+						var newTime = new Date().getTime()
+						
+						
+						fetch(`/v2/page?pageId=1&tabId=10006&currentPage=${++pages}&pageSize=8&_=${newTime}`)
+							.then(res => res.json())
+							.then(res => {
+								this.setState({
+									datalist:[...this.state.datalist, ...res.data.modules]
+								})
+								//console.log(this.state.datalist)
+							})
+						
+						setTimeout(() => {
+							this.setState({ refreshing: false });
+						}, 1000);
+					}}>
 
+					{/* 自己的数据 */}
+					{
+						this.state.banners?
+						<Carousels mylist={this.state.banners}></Carousels>
+						:null
+					}
+					{
+						this.state.datalist?
+						<Landscape data={this.state.datalist}></Landscape>
+						:null
+					}
+					{
+						this.state.datalist?
+						<Pagemodule data={this.state.datalist}></Pagemodule>
+						:null
+					}
+				</PullToRefresh>
 			</div>
 		)
 	}
 
+	componentWillMount(){
+		this.setState({
+			timeNow: new Date().getTime()
+		}, ()=>{
+			console.log(this.state.timeNow)
+		})
+	}
+
 	componentDidMount() {
 
-		var timestamp = new Date().getTime();
+		const hei = this.state.height - ReactDOM.findDOMNode(this.ptr).offsetTop;
 
-		fetch(`/v2/page?pageId=1&tabId=10006&currentPage=1&pageSize=8&_=${timestamp}`)
+		fetch(`/v2/page?pageId=1&tabId=10006&currentPage=1&pageSize=8&_=${this.state.timeNow}`)
 			.then(res => res.json())
 			.then(res => {
 
-				//console.log(res.data)
-
-				var bannerData = res.data.modules[0].moduleContent.banners
-
-				var imgArr = [];
-				for(var i in bannerData){
-					//console.log(res.data.modules[0].moduleContent.banners[i].bannerImgSrc)
-					console.log(bannerData[i].bannerImgSrc);
-					imgArr.push(bannerData[i].bannerImgSrc);
-				}
 				//console.log(imgArr);
-				
-
 				this.setState({
-					datalist: res.data,
+					datalist: res.data.modules,
 					banners: res.data.modules[0].moduleContent.banners,
+					// 下拉刷新
+					height: hei,
 				}, () => {
-					console.log(this.state.datalist);
+					//console.log(this.state.datalist);
+					//console.log(this.state.banners);
 					var mySwiper = new Swiper('.swiper-container', {
 						autoplay: true,
 						loop: true,
@@ -62,6 +113,7 @@ class Jiaju extends Component {
 					});
 				})
 			})
+
 	}
 }
 
