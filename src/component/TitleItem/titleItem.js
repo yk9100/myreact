@@ -19,7 +19,7 @@ class TitleItem extends Component {
 					    	this.props.mylist2.map((item)=>
 
 					        	<div className="swiper-slide"
-					        	 	key={item.id}
+					        	 	key={item.productId}
 					        		style={{
 
 					        		}}
@@ -48,10 +48,13 @@ class TitleItem extends Component {
 												textAlign: 'center',
 												fontSize: '.12rem',
 											}}>
-											<span className="sell-price" 
-													style={{}}>{'￥'+ item.sellPrice}
+											<span className="sell-price">
+												{'￥'+ item.sellPrice}
 											</span>
-				        					<span className="original-price">{'￥'+ item.originalPrice}</span>
+				        					<span className="original-price" 
+				        						style={{textDecoration: 'line-through',color: '#cccccc'}}>
+				        						{'￥'+ item.originalPrice}
+				        					</span>
 				        				</div>
 				        			</div>
 
@@ -70,7 +73,7 @@ class TitleItem extends Component {
 	}
 
 	componentDidMount() {
-		console.log(this.props.mylist2)
+		console.log('fuck111', this.props.mylist2)
 	}
 }
 

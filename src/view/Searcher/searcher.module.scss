@@ -1,0 +1,113 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul, li {
+	list-style: none;
+}
+
+
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+#searcher {
+	.searchTitle {
+		width: 100%;
+		height: .44rem;
+		background: white;
+		display: flex;
+		justify-content: space-between;
+		padding: 0 .1rem;
+		align-items: center;
+		border-bottom: 1px solid #f5f5f5;
+		.leftType {
+			width: 2.7rem;
+			height: .28rem;
+			background: #f5f5f5;
+			display: flex;
+			align-items: center;
+			border-radius: .1rem;
+			img {
+				width: .17rem;
+				display: inline-block;
+			}
+			input {
+				border: 0;
+				outline:none;
+				background: #f5f5f5;
+				width: 90%;
+			}
+		}
+		a {
+			display: block;
+			img {
+				width: .26rem;
+			}
+		}
+	}
+	.hotSearch {
+		width: 100%;
+		height: 2.43rem;
+		background: white;
+		padding: .1rem .1rem 0 .1rem;
+		p {
+			width: 100%;
+			height: .18rem;
+			margin-bottom: .1rem;
+		}
+		ul {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			li {
+				width: .54rem;
+				height: .36rem;
+				line-height: .36rem;
+				text-align: center;
+				background: pink;
+				margin-right: .1rem;
+				margin-bottom: .2rem;
+				font-size: .12rem;
+				background: #f5f5f5;
+			}
+		}
+
+	}
+	.historySearch {
+		width: 100%;
+		height: 2rem;
+		background: white;
+		padding: .1rem .1rem 0 .1rem;
+		.historyTitle {
+			width: 100%;
+			height:.33rem;
+			background: white;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			p {
+				height: .18rem;
+			}
+			.deleteIcon {
+				height: .18rem;
+				img {
+					height: .18rem;
+				}
+			}
+		}
+		.searchContents {
+			width: 100%;
+			height:auto;
+			background: white;
+			padding: .1rem;
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+}
