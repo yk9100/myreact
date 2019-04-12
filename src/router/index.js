@@ -19,8 +19,9 @@ import Jiaju from '../view/Home/Jiaju/jiaju';
 import Recommend from '../view/Home/Recommend/recommend';
 import Register from '../view/Register';
 import Login from '../view/Login';
-
-
+import zscOrder from '../view/Cart/Order/order.js';
+import zscCollection from '../view/Cart/Collection/collection.js'
+import zscUser from '../view/Cart/User/user.js';
 function isLogin () {
     return false;
 }
@@ -51,7 +52,9 @@ const routes = (
                 <Route path="/center" component={()=>isLogin()?<Center />:<Redirect to="/login" />}/>
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register}/>
-
+                <Route path="/zscOrder/:id" component={zscOrder}/>
+                <Route path="/zscCollection" component={zscCollection}/>
+                <Route path="/zscUser" component={zscUser}/>
 
                 <Redirect from="/" to="/home"/>
             </Switch>

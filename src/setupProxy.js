@@ -14,6 +14,12 @@ module.exports = (app) =>{
 				changeOrigin:true
 			})
 		),
+	app.use('/order',
+			proxy({
+				target:'https://m.wowdsgn.com',
+				changeOrigin:true
+			})
+		),
 	app.use('/v2',
 			proxy({
 				target: 'https://m.wowdsgn.com',
