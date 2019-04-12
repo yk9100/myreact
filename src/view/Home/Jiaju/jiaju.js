@@ -37,7 +37,7 @@ class Jiaju extends Component {
 						autoplay: true,
 						loop: true,
 						pagination: {
-							el: '.swiper-pagination',
+							el: '.swp1',
 						}
 					});
 				})

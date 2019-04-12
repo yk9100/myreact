@@ -1,6 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+//antd
+import 'antd-mobile/dist/antd-mobile.css';
+
+
+/*2019-04-09*/
+
 
 import * as serviceWorker from './serviceWorker';
 import routes from './router';

@@ -21,7 +21,7 @@ class Carousels extends Component {
 			        	this.props?
 			        	this.props.mylist.map((item)=>
 			        		<div className="swiper-slide" key={item.id}>
-			        			<img src={item.bannerImgSrc} style={{height:"2.5rem"}}/>
+			        			<img src={item.bannerImgSrc} style={{height:"2.5rem", width:"100%"}}/>
 			        		</div>)
 			        	:null
 			        }
