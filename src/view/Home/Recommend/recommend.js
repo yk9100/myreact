@@ -6,6 +6,7 @@ import Carousels from '../../../component/Carousels/carousels';
 import Swiper from 'swiper/dist/js/swiper.js';
 import 'swiper/dist/css/swiper.min.css';
 import TitleItme from '../../../component/TitleItem/titleItem';
+import ItemRecommend from './ItemRecommend/itemRecommend';
 
 class Recommend extends Component {
 	constructor(props) {
@@ -13,20 +14,26 @@ class Recommend extends Component {
 		this.state = {
 			datalist: [],
 			datalist2: [],
+			datalistItem: [],
 		}
 	}
 	render() {
 		return (
 			<div id={style.recommend}>
 				{
-					this.state.datalist.length?
+					this.state.datalist.length ?
 					<Carousels mylist={this.state.datalist}></Carousels>
 					:null
 				}
 
 				{
-					this.state.datalist2.length?
+					this.state.datalist2.length ?
 					<TitleItme mylist2={this.state.datalist2}></TitleItme>
+					:null
+				}
+				{	
+					this.state.datalistItem.length ?
+					<ItemRecommend mydatalistIetm={this.state.datalistItem}></ItemRecommend>
 					:null
 				}
 			</div>
@@ -61,8 +68,17 @@ class Recommend extends Component {
 					console.log('2', this.state.datalist2);
 					var swiper2 = new Swiper('.swiper2', {
 						slidesPerView: 3,
-						spaceBetween: -35,
+						spaceBetween: 10,
 					});
+				})
+			})
+
+		fetch('/v2/page?pageId=1&tabId=1&currentPage=1&pageSize=8&_=1554985474123')
+			.then(res => res.json())
+			.then(res => {
+				console.log('items', res.data.modules[2])
+				this.setState({
+					datalistItem: res.data.modules[2].moduleContent.banners
 				})
 			})
 
