@@ -83,7 +83,7 @@ class Page extends Component {
                     onClick={this.goCategory.bind(this)}
                 />
             </header>
-            <div className="swiper-container" style={{ padding: ".15rem 0" }}>
+            <div className="swiper-container swiperbg" style={{ padding: ".15rem 0" }}>
                 <div className="swiper-wrapper">
                 {
                         this.state.lb.map((item,cindex) =>

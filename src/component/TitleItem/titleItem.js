@@ -19,7 +19,7 @@ class TitleItem extends Component {
 					    	this.props.mylist2.map((item)=>
 
 					        	<div className="swiper-slide"
-					        	 	key={item.id}
+									key={item.productId}
 					        		style={{
 
 					        		}}
