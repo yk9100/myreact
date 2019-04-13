@@ -2,7 +2,9 @@ import React,{Component} from 'react';
 import style from './index.module.scss';
 
 // import { Tabs, WhiteSpace, Badge } from 'antd-mobile';
+import {showTabbar, hideTabbar} from '../../store/actionCreators';
 
+import {connect} from 'react-redux';
 
 class Login extends Component {
     
@@ -26,22 +28,22 @@ class Login extends Component {
                     <a className={style.header_regist_btn} onClick={this.toRegist.bind(this)}>注册</a>
                 </header>
                 <div className={style.signBox}>
-                    <p><span>用户名:</span><input type="text" onChange={(e)=>{this.setUserInfo(e, "username")}} /></p>
-                    <p><span>密  码:</span><input type="password" onChange={(e)=>{this.setUserInfo(e, "password")}} /></p>
-                    <p><input type="submit" value="登录" onClick={()=>{this.props.history.push("/home")}} /></p>
+                    <p><input type="text" onChange={(e)=>{this.setUserInfo(e, "username")}} placeholder="请输入用户名" /></p>
+                    <p><input type="password" onChange={(e)=>{this.setUserInfo(e, "password")}} placeholder="请输入密码" /></p>
+                </div>
+                <div className={style.form_btn}>
+                    <input type="submit" value="登录" onClick={()=>{this.props.history.push("/home")}} />
                 </div>
             </div>
         )
     }
 
-    setUserInfo(event, key){
+    componentDidMount(){
+        this.props.hideTabbar();
+    }
 
-        let obj = {};
-
-        obj[key] = event.target.value;
-
-        this.setState(obj);
-
+    componentWillUnmount(){
+        this.props.showTabbar();
     }
 
     toHome(){
@@ -53,5 +55,9 @@ class Login extends Component {
     }
 
 }
+const mapDispatchToProps = {
+    showTabbar,
+    hideTabbar
+}
 
-export default Login;
+export default connect(null, mapDispatchToProps)(Login);

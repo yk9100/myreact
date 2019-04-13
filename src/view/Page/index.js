@@ -198,7 +198,7 @@ class Page extends Component {
         //redux隐藏tabbar
         // store.dispatch(hideTabbar());
         this.props.hideTabbar();
-        //console.log(this.props.match.params.myid);
+        console.log(this.props.match.params.myid);
       
         fetch(`/pages/category/${this.props.match.params.myid}?currentPage=1&sort=onShelfTime&order=desc&_=${this.state.myDate}`)
         .then(res=>res.json()).then(res=>{
