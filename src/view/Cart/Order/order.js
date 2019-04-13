@@ -6,11 +6,12 @@ import { Toast, WhiteSpace, WingBlank, Button } from 'antd-mobile';
 import { Modal } from 'antd-mobile';
 import {connect} from 'react-redux';
 import {showTabbar, hideTabbar} from '../../../store/actionCreators.js';
-
+import { Drawer, List, NavBar, Icon } from 'antd-mobile';
 
 const alert = Modal.alert;
 
 class Order extends Component {
+	
 	
 
 	showAlert () {
@@ -24,9 +25,9 @@ class Order extends Component {
 	}
 	
 	state = {
-		orderList:[]
+		orderList:[],
+		boxHide:false
 	}
-	
 	
 
 	componentDidMount() {
@@ -50,13 +51,25 @@ class Order extends Component {
 	}
 
 	render () {
+
+
+		
+
 		return <div id={style.All}>
 			<ul className={style.header}>
 				<li onClick={this.showAlert.bind(this)}>〈</li>
-				<li>确认订单</li>
+				<li  onClick={()=>{
+				this.setState({
+					boxHide:!this.state.boxHide
+				})
+			}}>确认订单</li>
 			</ul>
 
-			<div className={style.adress}>+添加收货地址</div>
+			<div className={style.adress} onClick={()=>{
+				this.setState({
+					boxHide:! this.state.boxHide
+				})
+			}}>+添加收货地址</div>
 
 			<div className={style.getOrder}>
 				<div className={style.div_1}>订单1</div>
@@ -117,7 +130,7 @@ class Order extends Component {
 				<div>合计: ￥104</div>
 				<div onClick={this.successToast.bind(this)}>确认</div>
 			</footer>
-
+			<div id={style.hide} className={this.state.boxHide?'boxHide':''}></div>
 		</div>
 	}
 }

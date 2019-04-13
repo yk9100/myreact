@@ -1,20 +1,15 @@
 import React,{Component} from 'react'
 import store from '../../../store'
 import style from './user.module.scss'
+
 class User extends Component {
 	
 	componentDidMount () {
-		store.dispatch({
-			type:'hide_tabbar',
-			isShow:false
-		})
+		
 	}
 	
 	componentWillUnmount () {
-		store.dispatch({
-			type:'show_tabbar',
-			isShow:true
-		})
+		
 	}
 
 	render () {

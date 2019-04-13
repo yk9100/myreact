@@ -5,6 +5,7 @@ import store from '../../store'
 import { PullToRefresh } from 'antd-mobile';
 import ReactDOM from 'react-dom';
 import 'antd-mobile/dist/antd-mobile.css';
+
 var count = 1;
 class Cart extends Component {
 	fuck() {
