@@ -28,8 +28,8 @@ class Login extends Component {
                     <a className={style.header_regist_btn} onClick={this.toRegist.bind(this)}>注册</a>
                 </header>
                 <div className={style.signBox}>
-                    <p><input type="text" onChange={(e)=>{this.setUserInfo(e, "username")}} placeholder="请输入用户名" /></p>
-                    <p><input type="password" onChange={(e)=>{this.setUserInfo(e, "password")}} placeholder="请输入密码" /></p>
+                    <p><input type="text"  placeholder="请输入用户名" /></p>
+                    <p><input type="password" placeholder="请输入密码" /></p>
                 </div>
                 <div className={style.form_btn}>
                     <input type="submit" value="登录" onClick={()=>{this.props.history.push("/home")}} />
