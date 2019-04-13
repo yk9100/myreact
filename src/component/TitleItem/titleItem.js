@@ -4,7 +4,6 @@ import React, {
 import style from './titleItem.module.scss';
 
 class TitleItem extends Component {
-
 	render() {
 		return (
 			<div id={style.titleItem}>
@@ -18,13 +17,57 @@ class TitleItem extends Component {
 					    {
 					    	this.props?
 					    	this.props.mylist2.map((item)=>
-					        	<div className="swiper-slide" key={item.productId}>
-					        		<img src={item.productImg} style={{height: '.9rem',width: '.9rem'}}/>
+
+					        	<div className="swiper-slide"
+
+					        	 	key={item.productId}
+
+					        		style={{
+
+					        		}}
+					        	 >
+				        			<img src={item.productImg} 
+				        				style={{
+				        					width: "100%",
+				        					marginBottom: ".05rem",
+				        				}}/>
+
+				        			<div className="slide-bottom">
+				        				<div className="goods-infor" 
+				        				style={{
+												fontSize: '.14rem',
+												color: '#808080',
+												textAlign: 'center',
+												overflow: 'hidden',
+												whiteSpace: 'nowrap',
+												textOverflow: 'ellipsis',
+
+				        				}}>
+				        					{item.productName}
+				        				</div>
+				        				<div className="goods-prices"
+											style={{
+												textAlign: 'center',
+												fontSize: '.12rem',
+											}}>
+											<span className="sell-price">
+												{'￥'+ item.sellPrice}
+											</span>
+				        					<span className="original-price" 
+				        						style={{textDecoration: 'line-through',color: '#cccccc'}}>
+				        						{'￥'+ item.originalPrice}
+				        					</span>
+				        				</div>
+				        			</div>
+
 					        	</div>
 					    		)
 					    	:null
 					    }
 					    </div>
+					</div>
+					<div className={style.moreInfor}>
+						<a href="javascript:;">查看全部</a>
 					</div>
 				</div>
 			</div>
@@ -32,7 +75,7 @@ class TitleItem extends Component {
 	}
 
 	componentDidMount() {
-		console.log(this.props.mylist2)
+		console.log('fuck111', this.props.mylist2)
 	}
 }
 

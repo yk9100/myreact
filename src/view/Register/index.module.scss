@@ -41,6 +41,15 @@ header {
         text-align: center;
     }
 
+    a.header_home_btn{
+        float: left;
+        margin-left: 10px;
+        img{
+            width: .3rem;
+            margin-top: 10px; 
+        }
+    }
+
     a.header_login_btn{
         position: absolute;
         right: 0;
@@ -76,6 +85,7 @@ header {
         display: block;
         margin-top: 65px;
         width: 100%;
+        color: #fff;
         font-size: .16rem;
         line-height: .45rem;
         border:none;

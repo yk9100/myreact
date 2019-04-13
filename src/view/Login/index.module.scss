@@ -60,3 +60,36 @@ header {
         font-size: .16rem;
     }
 }
+
+.signBox{
+    margin: 4%;
+    background: #fff;
+
+    p{
+        padding: 1px 5%;
+        input{
+            display: block;
+            width: 100%;
+            line-height: .6rem;
+            border: 0;
+        }
+    }
+
+    p:nth-child(2) input{
+        border-top: 1px solid #ccc;
+    }
+}
+
+.form_btn {
+    margin: .4rem 4%;
+
+    input{
+        display: block;
+        width: 100%;
+        color: #fff;
+        font-size: .16rem;
+        line-height: .45rem;
+        background: #FFD444;
+        border: none;
+    }
+}

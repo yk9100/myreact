@@ -73,8 +73,12 @@ class Item extends Component {
             <footer>
                 <ul>
                     <li> ❤ | ♖</li>
-                    <li style={{ backgroundColor: "#f5f5f5"}}>加入购物车</li>
-                    <li style={{ backgroundColor: "#FFD444" }}>立即购买</li>
+                    <li onClick={()=>{
+                        this.props.history.push('/cart');
+                    }}  style={{ backgroundColor: "#f5f5f5"}}>加入购物车</li>
+                    <li onClick={()=>{
+                        this.props.history.push('/cart');
+                    }} style={{ backgroundColor: "#FFD444" }}>立即购买</li>
                 </ul>
             </footer>
             <aside>

@@ -22,11 +22,12 @@ img {
 	display: block;
 }
 
-#titleItem .container {
+#items .container{
 	width: 100%;
 	height: 3rem;
 	background: white;
 	margin-top: .15rem;
+	padding: .1rem;
 	.titleInfor {
 		width: 100%;
 		height: .65rem;
@@ -49,17 +50,4 @@ img {
 			padding-top: .05rem;
 		}
 	}
-	.moreInfor {
-		width: 100%;
-		height: .45rem;
-		a {
-			display: block;
-			width: 30%;
-			height: .45rem;
-			line-height: .45rem;
-			text-align: center;
-			margin: auto;
-		}
-	}
-
 }

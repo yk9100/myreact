@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import style from './index.module.scss';
+import {showTabbar, hideTabbar} from '../../store/actionCreators';
 
+import {connect} from 'react-redux';
 
 class Register extends Component {
 
@@ -17,6 +19,9 @@ class Register extends Component {
         return (
             <div className="main">
                 <header>
+                    <a className={style.header_home_btn} onClick={this.toHome.bind(this)}>
+                        <img src="./home_btn.png" />
+                    </a>
                     <h3>注册</h3>
                     <a className={style.header_login_btn} onClick={this.toLogin.bind(this)}>登录</a>
                 </header>
@@ -31,7 +36,13 @@ class Register extends Component {
         )
     }
 
+    componentDidMount(){
+        this.props.hideTabbar();
+    }
 
+    componentWillUnmount(){
+        this.props.showTabbar();
+    }
 
     Regist(){
         this.setState({
@@ -46,5 +57,14 @@ class Register extends Component {
     toLogin(){
         this.props.history.push(`/login`);
     }
+
+    toHome(){
+        this.props.history.push(`/home`);
+    }
 }
-export default Register;
+const mapDispatchToProps = {
+    showTabbar,
+    hideTabbar
+}
+
+export default connect(null, mapDispatchToProps)(Register);

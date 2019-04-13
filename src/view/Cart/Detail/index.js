@@ -5,6 +5,10 @@ import { Carousel, WingBlank } from 'antd-mobile';
 import { Accordion, List } from 'antd-mobile';
 import axios from 'axios'
 import { Drawer, NavBar, Icon } from 'antd-mobile';
+import {connect} from 'react-redux';
+import {showTabbar, hideTabbar} from '../../../store/actionCreators.js';
+
+let count = 0;
 class ZscDetail extends Component {
 	enterCart(){
 		this.props.history.push('/cart')
@@ -42,10 +46,11 @@ class ZscDetail extends Component {
 		})
 	}
 	componentDidMount() {
-		store.dispatch({
-			type:'hide_tabbar',
-			isShow:false
-		})
+		// store.dispatch({
+		// 	type:'hide_tabbar',
+		// 	isShow:false
+		// })
+		this.props.hideTabbar();
 
 		axios({
 			url:`/recommend/item?skuId=${this.props.match.params.id}&_=1554877427243`
@@ -101,10 +106,12 @@ class ZscDetail extends Component {
 	}
 	
 	componentWillUnmount() {
-		store.dispatch({
-			type:'show_tabbar',
-			isShow:true
-		})
+		// store.dispatch({
+		// 	type:'show_tabbar',
+		// 	isShow:true
+		// })
+		this.props.showTabbar();
+		count = 0;
 	}
 
 	state={
@@ -120,12 +127,36 @@ class ZscDetail extends Component {
     	colorIndex:0,
     	gray:true,
     	changeRed:false,
-    	isShow:true
+    	isShow:true,
+    	zIndex:false
 	}
 
 	onOpenChange = (...args) => {
     	this.setState({ open: !this.state.open });
+    	
+    	if ((count++ %2) === 0) {
+			this.refs.showul.style.height = 0;
+
+    	} else {
+    		this.refs.showul.style.height = 45 + 'px';
+    	}
+    	
   	}
+
+  	hh () {
+  		console.log('hh');
+  		this.setState({ open: !this.state.open });
+		
+    	if ((count++ %2) === 0) {
+			this.refs.showul.style.height = 0;
+			
+    	} else {
+    		this.refs.showul.style.height =45 + 'px';
+    	}
+
+    	
+  	}
+	
 
   	changeColor (index) {
 		this.setState({
@@ -144,7 +175,7 @@ class ZscDetail extends Component {
 						<img src={this.state.buyList.productImage} alt=""/>
 					</li>
 					<li>
-						<p>{this.state.buyList.productTitle}</p>
+						<p onClick={this.hh.bind(this)}>{this.state.buyList.productTitle}</p>
 						<p>￥{this.state.buyList.originalPrice}</p>
 						<p>
 							<span>尺寸:{this.state.buyList.sizeText}</span>
@@ -189,7 +220,13 @@ class ZscDetail extends Component {
 						</div>
 					</li>
 				</ul>
-	      	</div> 		
+	      	</div>
+
+
+
+	      	<div className={style.queding} onClick={()=>{
+	      		this.props.history.push(`/zscOrder/${this.props.match.params.id}`)
+	      	}}>确定</div> 		
 	      </div>
 	    </List>)
 
@@ -210,13 +247,14 @@ class ZscDetail extends Component {
            </header>
 			{	this.state.isShow?
 	           <footer className={style.footer}>
-	           		<ul>
+	           		<ul ref="showul">
 	           			<li>
 							<span className="iconfont" onClick={this.changeRed.bind(this) } className={this.state.changeRed?'changeRed':''}>❤</span>
 							<span className="iconfont" onClick={()=>{
 								this.props.history.push('/cart')
 							}}>&#xe639;</span>
 	           			</li>
+
 	           			<li onClick={this.onOpenChange.bind(this)}>加入购物车</li>
 	           			<li onClick={this.onOpenChange.bind(this)}>立即购买</li>
 	           		</ul>
@@ -603,7 +641,7 @@ class ZscDetail extends Component {
 					</ul>
 			</div>
 			
-			<NavBar icon={<Icon type="ellipsis" />} onLeftClick={this.onOpenChange}>Basic</NavBar>
+			// <NavBar icon={<Icon type="ellipsis" />} onLeftClick={this.onOpenChange}>Basic</NavBar>
 		      <Drawer
 		        className="my-drawer"
 		        style={{ minHeight: document.documentElement.clientHeight }}
@@ -617,6 +655,12 @@ class ZscDetail extends Component {
 		      </Drawer>
 		</div>
 	}
+
+
+}
+let mapDistpatchToProps = {
+	showTabbar,
+	hideTabbar
 }
 
-export default ZscDetail
+export default connect(null,mapDistpatchToProps)(ZscDetail)
