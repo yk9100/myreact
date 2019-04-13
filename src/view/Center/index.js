@@ -10,7 +10,7 @@ class Center extends Component {
 				<div className={style.wode}>
 					<ul>
 						<li>
-							<img src="https://m.wowdsgn.com/static/img/default_portrait.png" alt=""/>
+							<img src="/kerwin.jpg" alt=""/>
 						</li>
 						<li>
 							<p>Kerwin</p>

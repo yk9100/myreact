@@ -31,9 +31,9 @@ import Item from '../view/Item';
 import List from '../view/Message/List';
 
 
-function isLogin () {
-    return true;
-}
+// function isLogin () {
+//     return true;
+// }
 
 const routes = (
     <Provider store={store}>
@@ -57,9 +57,9 @@ const routes = (
                 <Route path="/page/:myid" component={Page}/>
                 <Route path="/item" component={Item}/>
                 <Route path="/list" component={List}/>
-                <Route path="/cart" component={()=>isLogin()?<Cart />:<Redirect to="/login" />}/>
-                <Route path="/message" component={()=>isLogin()?<Message />:<Redirect to="/login" />}/>
-                <Route path="/center" component={()=>isLogin()?<Center />:<Redirect to="/login" />}/>
+                <Route path="/cart" component={()=>store.getState().loginReducer?<Cart />:<Redirect to="/login" />}/>
+                    <Route path="/message" component={() => store.getState().loginReducer?<Message />:<Redirect to="/login" />}/>
+                    <Route path="/center" component={() => store.getState().loginReducer?<Center />:<Redirect to="/login" />}/>
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register}/>
                 <Route path="/zscOrder/:id" component={zscOrder}/>

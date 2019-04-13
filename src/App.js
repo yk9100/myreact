@@ -25,12 +25,10 @@ class App extends Component {
   }
 
   componentDidMount () {
-    // store.subscribe(()=>{
-    //   console.log("我收到消息了", store.getState());
-    //   this.setState({
-    //     isShow: store.getState().tabbarReducer
-    //   });
-    // })
+    store.subscribe(()=>{
+      console.log("我收到消息了", store.getState());
+      
+    })
   }
 }
 
